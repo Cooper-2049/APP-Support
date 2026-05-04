@@ -1,74 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jie Zeng — Software Studio</title>
+    <style>
+        :root {
+            --bg-body: #F5F5F7;
+            --bg-card: #FFFFFF;
+            --text-main: #1D1D1F;
+            --text-sub: #86868B;
+            --accent-blue: #0066CC;
+            --border-subtle: rgba(0, 0, 0, 0.08);
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
 
-  <title>App Support</title>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 48px 24px;
-      line-height: 1.6;
-      color: #1f2933;
-      background: #fafafa;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: -0.01em;
+        }
 
-    h1 {
-      font-size: 34px;
-      margin-bottom: 8px;
-    }
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 100px 32px;
+        }
 
-    h2 {
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
+        header { margin-bottom: 80px; }
 
-    .app {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 20px;
-      margin: 16px 0;
-    }
+        .studio-tag {
+            font-weight: 600; font-size: 14px; color: var(--accent-blue);
+            text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; display: block;
+        }
 
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
+        h1 { font-size: 56px; font-weight: 700; line-height: 1.1; letter-spacing: -0.015em; }
 
-    a:hover {
-      text-decoration: underline;
-    }
+        .subtitle {
+            font-size: 24px; line-height: 1.2; font-weight: 400;
+            color: var(--text-sub); max-width: 700px; margin-top: 20px;
+        }
 
-    .footer {
-      margin-top: 40px;
-      color: #6b7280;
-      font-size: 14px;
-    }
-  </style>
+        .app-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 32px;
+        }
+
+        .app-card {
+            background: var(--bg-card); border-radius: 30px; padding: 40px;
+            border: 1px solid var(--border-subtle); box-shadow: var(--shadow-soft);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+
+        .app-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+
+        .icon-box { width: 64px; height: 64px; margin-bottom: 24px; }
+        .app-icon-img { width: 100%; height: 100%; border-radius: 14px; border: 0.5px solid rgba(0,0,0,0.1); }
+
+        h2 { font-size: 28px; font-weight: 600; margin-bottom: 12px; }
+        
+        .app-card p { color: var(--text-sub); font-size: 17px; line-height: 1.5; margin-bottom: 30px; flex-grow: 1; }
+
+        /* App 专属标签：比如本地处理、隐私安全等 */
+        .app-tags { display: flex; gap: 8px; margin-bottom: 20px; }
+        .tag { font-size: 12px; padding: 4px 10px; background: #F5F5F7; border-radius: 6px; color: #48484A; font-weight: 500; }
+
+        .card-actions { display: flex; gap: 12px; }
+        .btn {
+            text-decoration: none; font-size: 14px; font-weight: 500;
+            padding: 8px 18px; border-radius: 20px; transition: all 0.2s ease;
+        }
+        .btn-primary { background-color: var(--text-main); color: #fff; }
+        .btn-secondary { background-color: #F5F5F7; color: var(--text-main); }
+
+        footer {
+            margin-top: 120px; padding-top: 40px; border-top: 1px solid var(--border-subtle);
+            color: var(--text-sub); font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 60px 24px; }
+            h1 { font-size: 36px; }
+            .app-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 
 <body>
-  <h1>App Support</h1>
-  <p>Support and privacy information for iOS apps by Jie Zeng.</p>
+    <div class="container">
+        <header>
+            <span class="studio-tag">Independent Developer</span>
+            <h1>Jie Zeng</h1>
+            <p class="subtitle">Crafting intuitive tools and high-performance experiences for the Apple ecosystem.</p>
+        </header>
 
-  <div class="app">
-    <h2>ASO Glance</h2>
-    <p>A focused workspace for organizing App Store keyword ideas, metadata notes, and listing improvement drafts.</p>
-    <p>
-      <a href="./ASOGlance/">Support</a>
-      ·
-      <a href="./ASOGlance/privacy.html">Privacy Policy</a>
-    </p>
-  </div>
+        <main class="app-grid">
+            <div class="app-card">
+                <div>
+                    <div class="icon-box">
+                        <div style="width:100%; height:100%; background:linear-gradient(135deg, #6366f1, #a855f7); border-radius:14px;"></div>
+                    </div>
+                    <h2>ASO Glance</h2>
+                    <div class="app-tags">
+                        <span class="tag">Local Processing</span>
+                        <span class="tag">Privacy Focused</span>
+                    </div>
+                    <p>Visual workspace for App Store Optimization. Preview metadata and iterate keyword drafts in a native store environment.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="./ASOGlance/" class="btn btn-primary">Support</a>
+                    <a href="./ASOGlance/privacy.html" class="btn btn-secondary">Privacy</a>
+                </div>
+            </div>
 
-  <p class="footer">
-    Contact:
-    <a href="mailto:zengjie20@gmail.com">zengjie20@gmail.com</a>
-  </p>
+            <div class="app-card" style="border-style: dashed; background: transparent; opacity: 0.5;">
+                <div style="margin: auto; text-align: center;">
+                    <h2 style="color: var(--text-sub);">Next Project</h2>
+                    <p>Coming Soon</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            &copy; 2026 Jie Zeng. All rights reserved. <br>
+            Designed with a focus on simplicity and user privacy.
+        </footer>
+    </div>
 </body>
 </html>
