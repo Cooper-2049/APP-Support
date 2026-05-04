@@ -1,74 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASO Glance — Support & Privacy</title>
+    <style>
+        :root {
+            --bg-color: #F5F5F7;
+            --card-bg: #FFFFFF;
+            --text-main: #1D1D1F;
+            --text-secondary: #86868B;
+            --accent-blue: #0066CC;
+            --card-shadow: 0 8px 30px rgba(0,0,0,0.04);
+        }
 
-  <title>App Support</title>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 48px 24px;
-      line-height: 1.6;
-      color: #1f2933;
-      background: #fafafa;
-    }
+        .container {
+            max-width: 680px;
+            margin: 80px auto;
+            padding: 0 24px;
+        }
 
-    h1 {
-      font-size: 34px;
-      margin-bottom: 8px;
-    }
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
 
-    h2 {
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
 
-    .app {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 20px;
-      margin: 16px 0;
-    }
+        .subtitle {
+            font-size: 21px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
 
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
+        .app-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 40px;
+            transition: transform 0.3s ease;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
+        h2 {
+            font-size: 28px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-    .footer {
-      margin-top: 40px;
-      color: #6b7280;
-      font-size: 14px;
-    }
-  </style>
+        /* 模拟一个精致的 App 图标占位 */
+        .app-icon-stub {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            border-radius: 10px;
+        }
+
+        .description {
+            font-size: 17px;
+            line-height: 1.5;
+            color: var(--text-main);
+            margin: 24px 0;
+        }
+
+        .action-links {
+            display: flex;
+            gap: 20px;
+            border-top: 1px solid #F2F2F7;
+            padding-top: 24px;
+        }
+
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* 隐私政策部分 - 专门给审核员看的 */
+        section {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            font-size: 15px;
+            line-height: 1.6;
+            color: #48484A;
+        }
+
+        section h3 {
+            color: var(--text-main);
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-bottom: 40px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 34px; }
+            .container { margin: 40px auto; }
+        }
+    </style>
 </head>
 
 <body>
-  <h1>App Support</h1>
-  <p>Support and privacy information for iOS apps by Jie Zeng.</p>
+    <div class="container">
+        <header>
+            <h1>ASO Glance</h1>
+            <p class="subtitle">Personal developer project by Jie Zeng</p>
+        </header>
 
-  <div class="app">
-    <h2>ASO Glance</h2>
-    <p>A focused workspace for organizing App Store keyword ideas, metadata notes, and listing improvement drafts.</p>
-    <p>
-      <a href="./ASOGlance/">Support</a>
-      ·
-      <a href="./ASOGlance/privacy.html">Privacy Policy</a>
-    </p>
-  </div>
+        <main>
+            <div class="app-card">
+                <h2><div class="app-icon-stub"></div> Support</h2>
+                <p class="description">
+                    Need help with ASO Glance? We are here to support your metadata optimization journey. 
+                    If you have questions, feedback, or found a bug, please reach out via email.
+                </p>
+                <div class="action-links">
+                    <a href="mailto:zengjie20@gmail.com">Contact Support</a>
+                    </div>
+            </div>
 
-  <p class="footer">
-    Contact:
-    <a href="mailto:zengjie20@gmail.com">zengjie20@gmail.com</a>
-  </p>
+            <section id="privacy">
+                <h3>Privacy Policy</h3>
+                <p><strong>Effective Date: May 3, 2026</strong></p>
+                <p>At ASO Glance, your privacy is our priority. As a tool designed for developers, we respect your data and intellectual property.</p>
+                
+                <p><strong>1. Data Collection:</strong> ASO Glance is a 100% local utility app. We do <strong>not</strong> collect, store, or transmit any of your metadata, keyword ideas, or uploaded app screenshots to external servers.</p>
+                
+                <p><strong>2. Photo Access:</strong> Our app requires access to your Photo Library only to allow you to import screenshots for ASO preview purposes. These images are processed entirely on-device.</p>
+                
+                <p><strong>3. Third-Party Services:</strong> This app does not use third-party analytics or advertising SDKs that track your behavior.</p>
+                
+                <p><strong>4. Data Security:</strong> All app data is stored securely using the iOS file system (Codable + FileManager). Deleting the app will remove all local data unless backed up via system-wide iCloud backups.</p>
+
+                <p>For further inquiries, please contact: <a href="mailto:zengjie20@gmail.com">zengjie20@gmail.com</a></p>
+            </section>
+        </main>
+
+        <footer>
+            &copy; 2026 Jie Zeng. All rights reserved. <br>
+            Hangzhou Chuangyishe Network Technology Co., Ltd.
+        </footer>
+    </div>
 </body>
 </html>
